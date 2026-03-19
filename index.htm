@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Night Sky | 08.25.2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --night-blue: #0a192f;
+            --star-blue: #00d2ff;
+            --accent-cyan: #3a86ff;
+            --text-silver: #e0e0e0;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--night-blue);
+            color: var(--text-silver);
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* STARS */
+        .stars-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        }
+
+        .star {
+            position: absolute; background: white; border-radius: 50%;
+            opacity: 0.5; animation: twinkle var(--duration) infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ENTRANCE LOCK */
+        #lock-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #050a14; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 9999;
+        }
+
+        .pass-input {
+            padding: 15px; width: 280px; border-radius: 10px;
+            border: 2px solid var(--accent-cyan); background: transparent;
+            color: white; text-align: center; font-size: 1.1rem; margin-bottom: 20px;
+        }
+
+        .btn-enter {
+            padding: 12px 40px; background: var(--accent-cyan);
+            color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: 700;
+        }
+
+        /* CONTENT */
+        #main-wrapper { display: none; }
+
+        header {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: clamp(3rem, 10vw, 6rem); color: var(--star-blue); }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
+
+        section {
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px;
+            border-radius: 30px; margin-bottom: 40px;
+        }
+
+        h2 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--star-blue); margin-bottom: 20px; text-align: center; }
+
+        p { margin-bottom: 25px; text-align: justify; font-size: 1.1rem; }
+
+        /* SECRET VAULT */
+        .vault-box {
+            background: rgba(0, 210, 255, 0.08); border: 2px dashed var(--star-blue);
+            padding: 40px; border-radius: 30px; text-align: center; margin-top: 60px;
+        }
+
+        #vault-content { display: none; margin-top: 30px; animation: fadeIn 2s; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        footer { text-align: center; padding: 60px; opacity: 0.5; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+
+    <div id="lock-screen">
+        <h2 style="color: white; margin-bottom: 20px;">Private Entry</h2>
+        <input type="password" id="passInput" class="pass-input" placeholder="Enter Password">
+        <button class="btn-enter" onclick="checkGate()">Unlock</button>
+    </div>
+
+    <div id="main-wrapper">
+        <header>
+            <h1>Our Story</h1>
+            <p style="color: var(--star-blue); letter-spacing: 4px; font-weight: 600;">08.25.2024</p>
+        </header>
+
+        <div class="container">
+            <section>
+                <h2>The Beginning</h2>
+                <p>It all started in such a simple and unexpected way on Snapchat Out of millions of people somehow our paths crossed and something about that moment still feels unreal to me I added her without thinking too much just like any other add but when she accepted I did not know that one small action would change my entire life We began talking casually at first just simple conversations getting to know each other slowly But day by day those conversations became longer deeper and more meaningful Without even realizing it she became the person I looked forward to talking to the most Then came August 25 2024 the day everything changed for us That was the day we officially started dating and since then my life has been completely different in the best possible way</p>
+            </section>
+
+            <section>
+                <h2>The Strength of Us</h2>
+                <p>Our relationship has not always been easy and that is something I am not afraid to admit We have gone through arguments misunderstandings and moments where things felt confusing or even painful There were times when we did not see things the same way times when emotions took over and times when it felt like everything might fall apart But what makes us special is that we never gave up on each other No matter how hard things got we always found our way back Every argument taught us patience every misunderstanding taught us how to communicate better and every tough moment made our bond stronger Instead of breaking us those challenges built us into something more real and more powerful At the end of the day we always chose each other and that choice means everything</p>
+            </section>
+
+            <section>
+                <h2>Why You Are Everything</h2>
+                <p>There is something about her that I can never fully explain no matter how many words I try to use The way she smiles has this unbelievable power to make everything feel okay even on my worst days Her presence alone brings me peace The way she looks the way she talks the way she reacts to little things it all means so much to me Even the smallest details about her stay in my mind I love teasing her and playfully bullying her because those moments are filled with laughter and happiness It is our way of being comfortable with each other of being real without pretending Even joking around about her dad is part of that fun and it shows how natural and close we have become With her I do not have to act like someone else I can just be myself</p>
+                <p>What makes everything even more meaningful is that she is not just someone I love she is someone who has become part of my life completely I have talked to her mom her sister her brothers and that connection makes everything feel deeper and more serious It is not just about us anymore it feels like I am slowly becoming a part of her family and she is becoming a part of mine That kind of connection is rare and I value it more than anything It shows that what we have is not temporary it is something real something that is growing into a future</p>
+            </section>
+
+            <section>
+                <h2>My Promise & Growth</h2>
+                <p>She is everything I could ever ask for and more She is kind caring loving and understanding in ways that are hard to describe She has this ability to make me feel important to make me feel seen and to make me feel like I matter Even on days when I am not at my best she is there for me She listens she supports me and she stays In a world where people come and go she is constant She is someone I can trust with my thoughts my feelings and my dreams Honestly she is everything someone could ever wish for and somehow I am lucky enough to have her in my life</p>
+                <p>For her I have changed in ways I never thought I would I have stopped my bad habits I have worked on myself and I have tried to become a better person not because I was forced to but because she inspires me to be better She made me realize things about myself that I needed to change and I chose to change them because she means that much to me I have adjusted my ways improved my mindset and grown as a person all because I want to give her the best version of me It is not just about changing for her it is about growing with her and becoming someone worthy of the love she gives me</p>
+            </section>
+
+            <div class="vault-box">
+                <h2>🔒 The Forever Vault</h2>
+                <p>Enter the date we started dating (MMDDYYYY)</p>
+                <input type="text" id="vaultPass" class="pass-input" style="border-color: white;" placeholder="00000000">
+                <br>
+                <button class="btn-enter" style="background: white; color: black;" onclick="openVault()">Unlock Final Promise</button>
+
+                <div id="vault-content">
+                    <p>I have made a promise to her and it is one I take seriously I promise to make her happy not just for now but for the rest of my life I promise to stand by her side through everything through the good times and the bad through happiness and struggles through every phase of life I want to be the person she can always rely on the person who never gives up on her no matter what Loving her is not just a feeling it is a commitment a choice I make every single day</p>
+                    <p>We do not just think about today we think about our future We talk about getting married about building a life together about growing old side by side Those dreams feel real because of how strong our connection is It is not just about being together now it is about choosing each other forever That kind of love is not something you find easily and I know how lucky I am to have it</p>
+                    <p style="font-weight: bold; font-size: 1.4rem; color: var(--star-blue);">At the end of everything no matter what happens in life one thing will always stay the same I love her deeply I love her for who she is for how she makes me feel for the way she has changed my life and for the future we are building together Out of all the people in the world I found her and that is something I will never take for granted She is not just my girlfriend she is my everything my happiness and my forever</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Built for my forever | Always & Forever 2024-2026
+        </footer>
+    </div>
+
+    <script>
+        function checkGate() {
+            if(document.getElementById('passInput').value === "emonstinks") {
+                document.getElementById('lock-screen').style.display = "none";
+                document.getElementById('main-wrapper').style.display = "block";
+            } else { alert("Try again!"); }
+        }
+
+        function openVault() {
+            if(document.getElementById('vaultPass').value === "08252024") {
+                document.getElementById('vault-content').style.display = "block";
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            } else { alert("Incorrect Date!"); }
+        }
+
+        const starContainer = document.getElementById('stars');
+        for (let i = 0; i < 120; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
